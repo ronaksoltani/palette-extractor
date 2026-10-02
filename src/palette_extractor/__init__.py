@@ -1,0 +1,1 @@
+"""Dominant image color extraction."""
