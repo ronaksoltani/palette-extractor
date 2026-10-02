@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "palette-extractor"
+version = "1.0.0"
+description = "Extract dominant colors and render a labeled swatch image"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Ronak Soltani"}]
+dependencies = ["Pillow>=10.0", "numpy>=1.26", "scikit-learn>=1.4"]
+
+[project.scripts]
+palette-extract = "palette_extractor.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
